@@ -1,6 +1,5 @@
-import { Button } from 'react-bootstrap';
-import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
+// import logo from '../public/doge2.png';
 
 function Home() {
   const { user } = useAuth();
@@ -15,11 +14,9 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Hello {user.displayName}! </h1>
-      <p>Click the button below to logout!</p>
-      <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
-        Sign Out
-      </Button>
+      <h1>Welcome, {user.displayName}! </h1>
+      <img src="/images/doge.png" alt="DOGEBALL" />
+      <p>Create your own team today!</p>
     </div>
   );
 }
