@@ -17,12 +17,9 @@ export default function ViewTeam() {
   return (
     <div className="mt-5 d-flex flex-wrap flex-column">
       <div className="text-white ms-5 details">
-        <Link href="/teammate/new" passHref>
-          <Button>Add A Teammate</Button>
-        </Link>
-        <h5>
+        <h2>
           {teamDetails.city} {teamDetails.name}
-        </h5>
+        </h2>
         <hr />
       </div>
       <div className="mt-5 d-flex flex-wrap">
@@ -30,6 +27,9 @@ export default function ViewTeam() {
           <TeammateCard key={teammate.firebaseKey} teammateObj={teammate} onUpdate={() => null} />
         ))}
       </div>
+      <Link href="/teammate/new" passHref>
+        <Button>Add A Teammate</Button>
+      </Link>
     </div>
   );
 }

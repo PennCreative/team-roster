@@ -1,5 +1,5 @@
 import { getTeamTeammates, getSingleTeam, deleteSingleTeam } from './teamData';
-import { getSingleTeammate, deleteTeammates } from './teammateData';
+import { getSingleTeammate, deleteTeammate } from './teammateData';
 
 const viewTeammateDetails = (teammateFirebaseKey) => new Promise((resolve, reject) => {
   getSingleTeammate(teammateFirebaseKey)
@@ -21,7 +21,7 @@ const viewTeamDetails = (teamFirebaseKey) => new Promise((resolve, reject) => {
 const deleteTeamTeammates = (teamId) => new Promise((resolve, reject) => {
   getTeamTeammates(teamId).then((teammatesArray) => {
     console.warn(teammatesArray, 'Team teammates');
-    const deleteTeammatesPromises = teammatesArray.map((teammates) => deleteTeammates(teammates.firebaseKey));
+    const deleteTeammatesPromises = teammatesArray.map((teammates) => deleteTeammate(teammates.firebaseKey));
 
     Promise.all(deleteTeammatesPromises).then(() => {
       deleteSingleTeam(teamId).then(resolve);
