@@ -14,9 +14,14 @@ a {
 }
 
 * {
+  color: #152046;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #88effd;
+  background-color: #FBE0BE;
+  color: #152046;
+}
+.container, .nav-link {
+  color: #152046;
 }
